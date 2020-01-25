@@ -1,6 +1,9 @@
 #include<iostream>
 #include<cstring>
 #include<iomanip>
+#include<stdlib.h>
+#define CLRSCR system("cls");
+
 #define MAX 200
 using namespace std;
 
@@ -262,11 +265,14 @@ void Dictionary::inorder(DictionaryNode* p)
 
 void Dictionary::display()
 {
+	CLRSCR;
+	cout<<"---List of words:"<<endl;
 	inorder(root);
 }
 
 void Dictionary::update()
 {
+	CLRSCR;
 	string uval;
 	cout<<"Enter key to update:";
 	cin>>uval;
@@ -309,6 +315,7 @@ void Dictionary::UpdateDictionaryNode(DictionaryNode* p,string x)
 
 void Dictionary::search()
 {
+	CLRSCR;
 	if(root != NULL)
 	{
 		string x;
@@ -352,6 +359,7 @@ void Dictionary::SearchWord(DictionaryNode* p,string x,int& c)
 
 void Dictionary::delete_word()
 {
+	CLRSCR;
 	string x;
 	cout<<"Enter the key to delete:";
 	cin>>x;
@@ -432,6 +440,7 @@ int main()
 		{
 		case 1:
 			a.add_word();
+			CLRSCR;
 			break;
 			case 2:
 				a.display();
